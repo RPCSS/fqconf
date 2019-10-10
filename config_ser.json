@@ -1,0 +1,67 @@
+{
+  "log": {
+    "access": "/var/log/v2ray/access.log",
+    "error": "/var/log/v2ray/error.log",
+    "loglevel": "warning"
+  },
+  "dns": {},
+  "inbounds": [
+    {
+      "port": 13064,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "f609aeda-97c3-4e77-8940-6837bbe1781c",
+            "alterId": 5,
+            "level": 0,
+            "email": "rpcss@qq.com"
+          }
+        ]
+      },
+      "tag": "FQV11",
+      "streamSettings": {
+        "network": "kcp",
+        "security": "none",
+        "kcpSettings": {
+          "mtu": 1350,
+          "tti": 20,
+          "uplinkCapacity": 5,
+          "downlinkCapacity": 100,
+          "congestion": true,
+          "readBufferSize": 2,
+          "writeBufferSize": 2,
+          "header": {
+            "type": "wechat-video"
+          }
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {
+        "userLevel": 0
+      }
+    }
+  ],
+  "routing": {
+    "domainStrategy": "AsIs"
+  },
+  "policy": {
+    "levels": {
+      "0": {
+        "statsUserUplink": false,
+        "statsUserDownlink": false
+      }
+    },
+    "system": {
+      "statsInboundUplink": false,
+      "statsInboundDownlink": false
+    }
+  },
+  "reverse": {},
+  "transport": {}
+}
